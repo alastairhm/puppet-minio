@@ -15,6 +15,9 @@
 # * `group`
 # The group owning minio and its' files. Default: 'minio'
 #
+# * `base_url`
+# Download base URL. Default: Github. Can be used for local mirrors.
+#
 # * `version`
 # Release version to be installed.
 #
@@ -76,6 +79,7 @@ class minio::install (
   String $owner                   = $minio::owner,
   String $group                   = $minio::group,
 
+  String $base_url                = $minio::base_url,
   String $version                 = $minio::version,
   String $checksum                = $minio::checksum,
   String $checksum_type           = $minio::checksum_type,

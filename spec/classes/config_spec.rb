@@ -11,20 +11,20 @@ describe 'minio::config', type: :class do
         let :params do
           {
             configuration: {
-              'version' => '18',
+              'version' => '19',
               'credential' => {
                 'accessKey' => 'ADMIN',
-                'secretKey' => 'PASSWORD'
+                'secretKey' => 'PASSWORD',
               },
               'region' => 'us-east-1',
-              'browser' => 'on'
+              'browser' => 'on',
             },
             owner: 'minio',
             group: 'minio',
             configuration_directory: '/etc/minio',
             installation_directory: '/opt/minio',
             storage_root: '/var/minio',
-            log_directory: '/var/log/minio'
+            log_directory: '/var/log/minio',
           }
         end
 

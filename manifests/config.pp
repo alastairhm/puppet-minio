@@ -48,7 +48,7 @@ class minio::config (
   ) {
 
   $default_configuration = {
-    'version' => '18',
+    'version' => '19',
     'credential' => {
       'accessKey' => 'admin',
       'secretKey' => 'password',
@@ -66,6 +66,7 @@ class minio::config (
     },
     'notify' => {
       'amqp' => {},
+      'mqtt' => {},
       'nats' => {},
       'elasticsearch' => {},
       'redis' => {},
@@ -76,7 +77,7 @@ class minio::config (
     },
   }
 
-  $resulting_configuration = sorted_json(deep_merge($default_configuration, $configuration), true, 2)
+  $resulting_configuration = to_sorted_json(deep_merge($default_configuration, $configuration))
 
   file { "${configuration_directory}/config.json":
     content => $resulting_configuration,
